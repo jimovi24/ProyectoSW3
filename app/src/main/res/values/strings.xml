@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProyectoSw3</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="title_activity_ingreso_facturas">ingresoFacturas</string>
+    <string name="title_activity_reporte_facturas">ReporteFacturas</string>
+    <string name="title_activity_configuracion">Configuracion</string>
+</resources>
