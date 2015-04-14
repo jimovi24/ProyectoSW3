@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteDB extends SQLiteOpenHelper {
 
     //Sentencia SQL para crear la tabla de Usuarios
-    String sqlCreate = "CREATE TABLE factura (rubro VARCHAR(20), num_factura VARCHAR(45), ruc VARCHAR(45), fecha_fact DATE, valor DOUBLE)";
+    String sqlCreate = "CREATE TABLE factura (rubro VARCHAR(20), num_factura VARCHAR(45), ruc VARCHAR(13), fecha_fact DATE, valor DOUBLE)";
 
     public SQLiteDB(Context contexto, String nombre,
                     CursorFactory factory, int version) {

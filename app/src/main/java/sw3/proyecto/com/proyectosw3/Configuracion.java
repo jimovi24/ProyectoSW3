@@ -8,20 +8,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 public class Configuracion extends Activity {
+
+    private Spinner spinner;
+    private static final String[]paths = {"Cedula", "RUC", "Pasaporte"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
 
+        spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Configuracion.this,
+                android.R.layout.simple_spinner_item,paths);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        /*
         String shared = "Config";
         SharedPreferences.Editor editor = getSharedPreferences(shared, MODE_PRIVATE).edit();
         editor.putString("name", "Elena");
         editor.putInt("idName", 12);
         editor.commit();
+        */
     }
 
 
@@ -53,7 +65,8 @@ public class Configuracion extends Activity {
         startActivity(main);
         finish();
     }
-    public void guardar(View view){
-
+    public void onClick(View view){
+        Intent i = new Intent(this, conf2.class);
+        startActivity(i);
     }
 }

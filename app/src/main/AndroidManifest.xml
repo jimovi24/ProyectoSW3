@@ -36,6 +36,10 @@
             android:screenOrientation="portrait"
             android:label="@string/title_activity_configuracion" >
         </activity>
+        <activity
+            android:name=".conf2"
+            android:label="@string/title_activity_conf2" >
+        </activity>
     </application>
 
 </manifest>
