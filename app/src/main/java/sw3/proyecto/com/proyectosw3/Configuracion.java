@@ -1,10 +1,13 @@
 package sw3.proyecto.com.proyectosw3;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Configuracion extends Activity {
@@ -13,6 +16,12 @@ public class Configuracion extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
+
+        String shared = "Config";
+        SharedPreferences.Editor editor = getSharedPreferences(shared, MODE_PRIVATE).edit();
+        editor.putString("name", "Elena");
+        editor.putInt("idName", 12);
+        editor.commit();
     }
 
 
@@ -43,5 +52,8 @@ public class Configuracion extends Activity {
         Intent main= new Intent(getApplicationContext(),MainActivity.class);
         startActivity(main);
         finish();
+    }
+    public void guardar(View view){
+
     }
 }
