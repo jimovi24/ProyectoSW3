@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class conf2 extends Activity {
@@ -41,10 +42,39 @@ public class conf2 extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void guardar(View view){
+
+        TextView vivienda = (TextView) findViewById(R.id.editText8);
+        TextView alimentacion = (TextView) findViewById(R.id.editText9);
+        TextView salud = (TextView) findViewById(R.id.editText10);
+        TextView educacion = (TextView) findViewById(R.id.editText11);
+        TextView vestimenta = (TextView) findViewById(R.id.editText12);
+        TextView fiscal = (TextView) findViewById(R.id.editText13);
+
+        getIntent().getStringExtra("id");
+        getIntent().getStringExtra("nombres");
+        getIntent().getStringExtra("calle");
+        getIntent().getStringExtra("num_calle");
+        getIntent().getStringExtra("prov");
+        getIntent().getStringExtra("cant");
+        getIntent().getStringExtra("telef");
+
         String shared = "Config";
         SharedPreferences.Editor editor = getSharedPreferences(shared, MODE_PRIVATE).edit();
-        editor.putString("name", "Elena");
-        editor.putInt("idName", 12);
+        editor.putString("id", getIntent().getStringExtra("id"));
+        editor.putString("nombres", getIntent().getStringExtra("nombres"));
+        editor.putString("calle", getIntent().getStringExtra("calle"));
+        editor.putString("num_calle", getIntent().getStringExtra("num_calle"));
+        editor.putString("prov", getIntent().getStringExtra("prov"));
+        editor.putString("cant", getIntent().getStringExtra("cant"));
+        editor.putString("telef", getIntent().getStringExtra("telef"));
+        editor.putString("vivienda", vivienda.getText().toString());
+        editor.putString("alimentacion", alimentacion.getText().toString());
+        editor.putString("salud", salud.getText().toString());
+        editor.putString("educacion", educacion.getText().toString());
+        editor.putString("vestimenta", vestimenta.getText().toString());
+        editor.putString("fiscal", fiscal.getText().toString());
+
+
         editor.commit();
     }
 }

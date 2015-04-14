@@ -10,12 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class Configuracion extends Activity {
 
     private Spinner spinner;
     private static final String[]paths = {"Cedula", "RUC", "Pasaporte"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +64,23 @@ public class Configuracion extends Activity {
         finish();
     }
     public void onClick(View view){
+
+        TextView id = (TextView) findViewById(R.id.editText);
+        TextView nombres = (TextView) findViewById(R.id.editText2);
+        TextView calle = (TextView) findViewById(R.id.editText3);
+        TextView num_calle = (TextView) findViewById(R.id.editText4);
+        TextView prov = (TextView) findViewById(R.id.editText5);
+        TextView cant = (TextView) findViewById(R.id.editText6);
+        TextView telef = (TextView) findViewById(R.id.editText7);
+
         Intent i = new Intent(this, conf2.class);
+        i.putExtra("id", id.getText());
+        i.putExtra("nombres", nombres.getText());
+        i.putExtra("calle", calle.getText());
+        i.putExtra("num_calle", num_calle.getText());
+        i.putExtra("prov", prov.getText());
+        i.putExtra("cant", cant.getText());
+        i.putExtra("telef", telef.getText());
         startActivity(i);
     }
 }
