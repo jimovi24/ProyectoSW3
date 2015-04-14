@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:spinnerMode="dropdown"
-        android:layout_above="@+id/btnIngresar"
+        android:layout_below="@+id/txtRubro"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -35,10 +35,10 @@
         android:layout_height="wrap_content"
         android:text="Rubro:"
         android:id="@+id/txtRubro"
-        android:layout_below="@+id/txtView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_below="@+id/txtValor"
+        android:layout_alignEnd="@+id/txtFecha"
+        android:layout_marginTop="47dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,9 +46,9 @@
         android:text="Factura:"
         android:id="@+id/txtFactura"
         android:textSize="18dp"
-        android:layout_below="@+id/txtRubro"
+        android:layout_below="@+id/txtRuc"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="44dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,7 +56,6 @@
         android:text="Ruc:"
         android:id="@+id/txtRuc"
         android:textSize="18dp"
-        android:layout_below="@+id/txtFactura"
         android:layout_alignParentStart="true"
         android:layout_marginTop="44dp" />
 
@@ -66,8 +65,9 @@
         android:text="Fecha:"
         android:id="@+id/txtFecha"
         android:textSize="18dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/txtFactura"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,23 +75,16 @@
         android:text="Valor:"
         android:id="@+id/txtValor"
         android:textSize="18dp"
-        android:layout_alignTop="@+id/EdtextValor"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/txtRubro" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/EdtextRubro"
-        android:layout_above="@+id/txtFactura"
-        android:layout_alignStart="@+id/btnIngresar"
-        android:layout_alignEnd="@+id/txtView" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/EdtextFactura"
         android:layout_alignBottom="@+id/txtFactura"
-        android:layout_alignStart="@+id/EdtextRubro"
-        android:layout_alignEnd="@+id/EdtextRubro" />
+        android:layout_alignStart="@+id/btnIngresar"
+        android:layout_alignEnd="@+id/txtView" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,19 +103,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/EdtextValor"
-        android:layout_marginTop="31dp"
-        android:layout_below="@+id/EdtextFecha"
+        android:layout_alignBottom="@+id/txtValor"
         android:layout_alignStart="@+id/EdtextFecha"
         android:layout_alignEnd="@+id/EdtextFecha" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo Gasto:"
-        android:id="@+id/txtTipoGasto"
-        android:textSize="18dp"
-        android:layout_above="@+id/spinner"
-        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

@@ -15,7 +15,8 @@ import android.widget.Toast;
 public class IngresoFacturas extends Activity {
     private Spinner spinner;
     private static final String[]paths = {"Vivienda", "Alimentacion", "Salud","Educacion","Vestimenta"};
-    private EditText rubroField,facturaField, fechaField, valorField, rucField;
+    private EditText rucField,facturaField, fechaField, valorField;
+    private Spinner rubroField;
 
     SQLiteDB base=new SQLiteDB(this, "base", null,1);
 
@@ -32,7 +33,7 @@ public class IngresoFacturas extends Activity {
 
 
         //Ingreso de variables
-        rubroField = (EditText) findViewById(R.id.EdtextRubro);
+        rubroField = (Spinner) findViewById(R.id.spinner);
          facturaField = (EditText) findViewById(R.id.EdtextFactura);
          rucField = (EditText) findViewById(R.id.EdtextRuc);
          fechaField = (EditText) findViewById(R.id.EdtextFecha);
@@ -72,14 +73,14 @@ public class IngresoFacturas extends Activity {
     }
 
     public void ingresar(View view){
-        Toast.makeText(this,""+rubroField.getText().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+rubroField.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
         Toast.makeText(this,""+facturaField.getText().toString(),Toast.LENGTH_LONG).show();
         Toast.makeText(this,""+rucField.getText().toString(),Toast.LENGTH_LONG).show();
         Toast.makeText(this,""+fechaField.getText().toString(),Toast.LENGTH_LONG).show();
         Toast.makeText(this,""+Double.parseDouble(valorField.getText().toString()),Toast.LENGTH_LONG).show();
 
 
-        base.insertar(rubroField.getText().toString(),facturaField.getText().toString(),
-                rucField.getText().toString(),fechaField.getText().toString(),Double.parseDouble(valorField.getText().toString()));
+        base.insertar(rubroField.getSelectedItem().toString(), facturaField.getText().toString(),
+                rucField.getText().toString(), fechaField.getText().toString(), Double.parseDouble(valorField.getText().toString()));
     }
 }
