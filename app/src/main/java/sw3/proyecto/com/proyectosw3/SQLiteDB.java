@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 
 public class SQLiteDB extends SQLiteOpenHelper {
@@ -55,7 +57,6 @@ public class SQLiteDB extends SQLiteOpenHelper {
             resultado=true;
 
             return resultado;
-
         }
 
         catch (Exception e){
@@ -65,6 +66,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
             return resultado;
 
         }
+
 
     }
 }
