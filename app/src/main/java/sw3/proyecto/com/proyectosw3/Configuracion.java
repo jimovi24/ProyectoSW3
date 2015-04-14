@@ -27,13 +27,7 @@ public class Configuracion extends Activity {
                 android.R.layout.simple_spinner_item,paths);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        /*
-        String shared = "Config";
-        SharedPreferences.Editor editor = getSharedPreferences(shared, MODE_PRIVATE).edit();
-        editor.putString("name", "Elena");
-        editor.putInt("idName", 12);
-        editor.commit();
-        */
+
     }
 
 

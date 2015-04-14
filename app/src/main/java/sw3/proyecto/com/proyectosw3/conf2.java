@@ -1,10 +1,13 @@
 package sw3.proyecto.com.proyectosw3;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class conf2 extends Activity {
@@ -36,5 +39,12 @@ public class conf2 extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void guardar(View view){
+        String shared = "Config";
+        SharedPreferences.Editor editor = getSharedPreferences(shared, MODE_PRIVATE).edit();
+        editor.putString("name", "Elena");
+        editor.putInt("idName", 12);
+        editor.commit();
     }
 }
