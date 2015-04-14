@@ -17,6 +17,8 @@ public class IngresoFacturas extends Activity {
     private static final String[]paths = {"Vivienda", "Alimentacion", "Salud","Educacion","Vestimenta"};
     private EditText rubroField,facturaField, fechaField, valorField, rucField;
 
+    SQLiteDB base=new SQLiteDB(this, "base", null,1);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +72,14 @@ public class IngresoFacturas extends Activity {
     }
 
     public void ingresar(View view){
-        Toast.makeText(getApplicationContext(), "presiono boton", Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+rubroField.getText().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+facturaField.getText().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+rucField.getText().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+fechaField.getText().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+Double.parseDouble(valorField.getText().toString()),Toast.LENGTH_LONG).show();
 
 
+        base.insertar(rubroField.getText().toString(),facturaField.getText().toString(),
+                rucField.getText().toString(),fechaField.getText().toString(),Double.parseDouble(valorField.getText().toString()));
     }
 }

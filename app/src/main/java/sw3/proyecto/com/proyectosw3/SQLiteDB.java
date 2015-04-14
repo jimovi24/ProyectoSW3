@@ -16,6 +16,9 @@ public class SQLiteDB extends SQLiteOpenHelper {
         super(contexto, nombre, factory, version);
     }
     private SQLiteDatabase db1;
+
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Se ejecuta la sentencia SQL de creación de la tabla
