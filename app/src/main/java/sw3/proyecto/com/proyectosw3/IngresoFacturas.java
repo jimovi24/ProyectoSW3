@@ -5,14 +5,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class IngresoFacturas extends Activity {
+    private Spinner spinner;
+    private static final String[]paths = {"Vivienda", "Alimentacion", "Salud","Educacion","Vestimenta"};
+    private EditText rubroField,facturaField, fechaField, valorField, rucField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingreso_facturas);
+
+        spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(IngresoFacturas.this,
+                android.R.layout.simple_spinner_item,paths);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
+        //Ingreso de variables
+        rubroField = (EditText) findViewById(R.id.EdtextRubro);
+         facturaField = (EditText) findViewById(R.id.EdtextFactura);
+         rucField = (EditText) findViewById(R.id.EdtextRuc);
+         fechaField = (EditText) findViewById(R.id.EdtextFecha);
+         valorField = (EditText) findViewById(R.id.EdtextValor);
+
     }
 
 
@@ -44,5 +67,11 @@ public class IngresoFacturas extends Activity {
         Intent main= new Intent(getApplicationContext(),MainActivity.class);
         startActivity(main);
         finish();
+    }
+
+    public void ingresar(View view){
+        Toast.makeText(getApplicationContext(), "presiono boton", Toast.LENGTH_LONG).show();
+
+
     }
 }

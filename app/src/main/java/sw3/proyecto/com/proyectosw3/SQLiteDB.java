@@ -15,7 +15,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
                     CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);
     }
-
+    private SQLiteDatabase db1;
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Se ejecuta la sentencia SQL de creación de la tabla
@@ -35,5 +35,33 @@ public class SQLiteDB extends SQLiteOpenHelper {
 
         //Se crea la nueva versión de la tabla
         db.execSQL(sqlCreate);
+    }
+
+    public boolean insertar(String rubro, String num_factura,String ruc,String fecha_fact,double valor){
+
+        boolean resultado=false;
+
+        try{
+
+            String query="INSERT INTO detalle_gastos(rubro, num_factura, ruc, fecha_fact, valor) VALUES('"+rubro+"','"+num_factura+"','"+
+
+                    ruc+"','"+fecha_fact+"','"+valor+"')";
+
+            db1.execSQL(query);
+
+            resultado=true;
+
+            return resultado;
+
+        }
+
+        catch (Exception e){
+
+            resultado=false;
+
+            return resultado;
+
+        }
+
     }
 }
