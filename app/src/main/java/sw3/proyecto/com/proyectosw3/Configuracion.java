@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -19,12 +20,27 @@ public class Configuracion extends Activity {
 
     private Spinner spinner;
     private static final String[]paths = {"Cedula", "RUC", "Pasaporte"};
+    EditText id;
+    EditText nombres;
+    EditText calle;
+    EditText num_calle;
+    EditText prov;
+    EditText cant;
+    EditText telef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
+
+        id = (EditText) findViewById(R.id.editText);
+        nombres = (EditText) findViewById(R.id.editText2);
+        calle = (EditText) findViewById(R.id.editText3);
+        num_calle = (EditText) findViewById(R.id.editText4);
+        prov = (EditText) findViewById(R.id.editText5);
+        cant = (EditText) findViewById(R.id.editText6);
+        telef = (EditText) findViewById(R.id.editText7);
 
         spinner = (Spinner)findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Configuracion.this,
@@ -65,22 +81,16 @@ public class Configuracion extends Activity {
     }
     public void onClick(View view){
 
-        TextView id = (TextView) findViewById(R.id.editText);
-        TextView nombres = (TextView) findViewById(R.id.editText2);
-        TextView calle = (TextView) findViewById(R.id.editText3);
-        TextView num_calle = (TextView) findViewById(R.id.editText4);
-        TextView prov = (TextView) findViewById(R.id.editText5);
-        TextView cant = (TextView) findViewById(R.id.editText6);
-        TextView telef = (TextView) findViewById(R.id.editText7);
 
         Intent i = new Intent(this, conf2.class);
-        i.putExtra("id", id.getText());
-        i.putExtra("nombres", nombres.getText());
-        i.putExtra("calle", calle.getText());
-        i.putExtra("num_calle", num_calle.getText());
-        i.putExtra("prov", prov.getText());
-        i.putExtra("cant", cant.getText());
-        i.putExtra("telef", telef.getText());
+        i.putExtra("tipo_id", spinner.getSelectedItem().toString());
+        i.putExtra("id", id.getText().toString());
+        i.putExtra("nombres", nombres.getText().toString());
+        i.putExtra("calle", calle.getText().toString());
+        i.putExtra("num_calle", num_calle.getText().toString());
+        i.putExtra("prov", prov.getText().toString());
+        i.putExtra("cant", cant.getText().toString());
+        i.putExtra("telef", telef.getText().toString());
         startActivity(i);
     }
 }
