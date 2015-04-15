@@ -92,5 +92,6 @@ public class Configuracion extends Activity {
         i.putExtra("cant", cant.getText().toString());
         i.putExtra("telef", telef.getText().toString());
         startActivity(i);
+        finish();
     }
 }

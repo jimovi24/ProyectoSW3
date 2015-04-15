@@ -100,6 +100,8 @@ public class conf2 extends Activity {
             editor.putString("fiscal", fiscal.getText().toString());
             editor.commit();
 
+            Toast.makeText(getApplicationContext(),"Configuración Guardada",Toast.LENGTH_LONG).show();
+
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
             finish();

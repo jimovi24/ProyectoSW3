@@ -73,14 +73,13 @@ public class IngresoFacturas extends Activity {
     }
 
     public void ingresar(View view){
-        Toast.makeText(this,""+rubroField.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
-        Toast.makeText(this,""+facturaField.getText().toString(),Toast.LENGTH_LONG).show();
-        Toast.makeText(this,""+rucField.getText().toString(),Toast.LENGTH_LONG).show();
-        Toast.makeText(this,""+fechaField.getText().toString(),Toast.LENGTH_LONG).show();
-        Toast.makeText(this,""+Double.parseDouble(valorField.getText().toString()),Toast.LENGTH_LONG).show();
-
 
         base.insertar(rubroField.getSelectedItem().toString(), facturaField.getText().toString(),
                 rucField.getText().toString(), fechaField.getText().toString(), Double.parseDouble(valorField.getText().toString()));
+        Toast.makeText(getApplicationContext(),"Factura Guardada",Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
 }

@@ -8,4 +8,9 @@
     <string name="title_activity_configuracion">Configuracion</string>
     <string name="title_activity_configuracion2">Configuracion2</string>
     <string name="title_activity_conf2">conf2</string>
+    <string name="label_nombre">Nombres y Apellidos:</string>
+    <string name="label_blank" />
+    <string name="label_id">Id:</string>
+    <string name="label_tipoId">Tipo Id:</string>
+    <string name="label_direccion">Direccion</string>
 </resources>
