@@ -64,7 +64,7 @@ public class conf2 extends Activity {
         float sum = Float.parseFloat(vivienda.getText().toString())+Float.parseFloat(alimentacion.getText().toString())+Float.parseFloat(salud.getText().toString())
         +Float.parseFloat(educacion.getText().toString())+Float.parseFloat(vestimenta.getText().toString());
 
-        if(sum>=17000){
+        if(sum>=17550){
             Toast.makeText(this,"Los rubros no deben ser mayores a 17000",Toast.LENGTH_LONG).show();
             vivienda.setText("");
             alimentacion.setText("");
